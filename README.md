@@ -6,7 +6,7 @@
   2. Output (convert the date to string)
     In addition to yyyy/mm/dd, generate at least MonthName dd, yyyy as output, where MonthName is the name of the moth January, February, . . . , December.
   3. Operations
-    Implement at least the following operations:
+    Implement at least the following operations:/n
     (a) DayOfWeek(date)
         Return day of the week: Sunday, Monday, . . . Saturday.
     (b) DateSub(date1, date2)
