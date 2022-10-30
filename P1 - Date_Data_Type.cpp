@@ -15,19 +15,19 @@ class date{
 		
 		/* name of every month */
 		string Month[12] = {
-				"January",
-			    "February",
-				"March",
-			    "April",
-			    "May",
-			    "June",
-			    "July",
-			    "August",
-			    "September",
-			    "October",
-			    "November",
-			    "December"
-			};
+			"January",
+			"February",
+			"March",
+			"April",
+			"May",
+			"June",
+			"July",
+			"August",
+			"September",
+			"October",
+			"November",
+			"December"
+		};
 		
 		/* count how many leap years */
 		int countLeapYears(unsigned int year, unsigned int month){	 
@@ -41,11 +41,11 @@ class date{
 		/* check if year is leap year */
 		bool isLeapYear(unsigned int year){
 			if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)){
-					return true;
-				}
-				else{
-					return false;
-				}
+				return true;
+			}
+			else{
+				return false;
+			}
 		}
 			
 		/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
@@ -73,12 +73,12 @@ class date{
 			
 			string week_day[] = {
 				"Tuesday",
-			    "Wednesday",
-			    "Thursday",
-			    "Friday",
-			    "Saturday",
-			    "Sunday",
-			    "Monday"
+			    	"Wednesday",
+				"Thursday",
+			    	"Friday",
+			    	"Saturday",
+			    	"Sunday",
+			    	"Monday"
 			};
 			
 			/* output */
@@ -125,66 +125,60 @@ class date{
 			unsigned int gap = n1 - n2;
 			
 			/* output */
-       		cout << gap << " days from "<<  Month[d1.month - 1] << " "<< d1.day << ", " << d1.year << " to " <<  Month[d2.month - 1] << " "<< d2.day << ", " << d2.year << endl; 
+       			cout << gap << " days from "<<  Month[d1.month - 1] << " "<< d1.day << ", " << d1.year << " to " <<  Month[d2.month - 1] << " "<< d2.day << ", " << d2.year << endl; 
 		}
 		
 		/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 		
 		void DateAdd(string date){
 			Date d;
-			long long x;
+				long long x;
 			
-			/* part year, month, day, x out from input string */
-			istringstream yy(date.substr(0,4));	
-			yy >> d.year;
-			istringstream mm(date.substr(5,2));	
-			mm >> d.month;
-			istringstream dd(date.substr(8,2));
-			dd >> d.day;
-			int pos = date.find("+");
-			istringstream xx(date.substr(pos + 1));	
-			xx >> x;
+				/* part year, month, day, x out from input string */
+				istringstream yy(date.substr(0,4));	
+				yy >> d.year;
+				istringstream mm(date.substr(5,2));	
+				mm >> d.month;
+				istringstream dd(date.substr(8,2));
+				dd >> d.day;
+				int pos = date.find("+");
+				istringstream xx(date.substr(pos + 1));	
+				xx >> x;
 			
-			/* save month, year, day, x variable */
-			unsigned int _year = d.year;
-			unsigned int _month = d.month;
-			unsigned int _day = d.day;
-			long long _x = x;
-			
-			while (x > 0)
-			{
-				/* not leap year February */
-				if (d.day == 28 && d.month == 2 && !isLeapYear(d.year))
+				/* save month, year, day, x variable */
+				unsigned int _year = d.year;
+				unsigned int _month = d.month;
+				unsigned int _day = d.day;
+				long long _x = x;
+				
+				while (x > 0)
 				{
+				/* not leap year February */
+				if (d.day == 28 && d.month == 2 && !isLeapYear(d.year)){
 					d.day = 1;
 					d.month++;
 				}
 				/* leap year February */
-				else if (d.day == 29 && d.month == 2 && isLeapYear(d.year))
-				{
+				else if (d.day == 29 && d.month == 2 && isLeapYear(d.year)){
 					d.day = 1;
 					d.month++;
 				}
 				/* small month */
-				else if (d.day == 30 && (d.month == 2 || d.month == 4 || d.month == 6 || d.month == 9 || d.month == 11))
-				{
+				else if (d.day == 30 && (d.month == 2 || d.month == 4 || d.month == 6 || d.month == 9 || d.month == 11)){
 					d.day = 1;
 					d.month++;
 				}
 				/* big month */
-				else if (d.day == 31 && (d.month == 1 || d.month == 3 || d.month == 5 || d.month == 7 || d.month == 8 || d.month == 10 || d.month == 12))
-				{
+				else if (d.day == 31 && (d.month == 1 || d.month == 3 || d.month == 5 || d.month == 7 || d.month == 8 || d.month == 10 || d.month == 12)){
 					d.day = 1;
 					d.month++;
 				}
 				/* normal day */
-				else
-				{
+				else{
 					d.day++;
 				}
 				/* year */
-				if (d.month == 13)
-				{
+				if (d.month == 13){
 					d.month = 1;
 					d.year++;
 				}
@@ -223,4 +217,3 @@ int main(){
 		cout << "Invalid input" << endl;
 	}
 }
-
