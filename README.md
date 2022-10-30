@@ -6,12 +6,12 @@
   2. Output (convert the date to string)
     In addition to yyyy/mm/dd, generate at least MonthName dd, yyyy as output, where MonthName is the name of the moth January, February, . . . , December.
   3. Operations
-    Implement at least the following operations:/n
-    (a) DayOfWeek(date)
+    Implement at least the following operations:
+    1. DayOfWeek(date)
         Return day of the week: Sunday, Monday, . . . Saturday.
-    (b) DateSub(date1, date2)
+    2. DateSub(date1, date2)
         Return number of days from date1 to date2.
-    (c) DateAdd(date, n)
+    3. DateAdd(date, n)
         Return the date which is n days after date.
 ## 2-Sorting
 *Implement the following sorting algorithms and compare their performances.
