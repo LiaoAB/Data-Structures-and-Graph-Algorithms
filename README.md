@@ -7,10 +7,13 @@
     In addition to yyyy/mm/dd, generate at least MonthName dd, yyyy as output, where MonthName is the name of the moth January, February, . . . , December.
   3. Operations
     Implement at least the following operations:
+    
     1. DayOfWeek(date)
         Return day of the week: Sunday, Monday, . . . Saturday.
+        
     2. DateSub(date1, date2)
         Return number of days from date1 to date2.
+        
     3. DateAdd(date, n)
         Return the date which is n days after date.
 ## 2-Sorting
